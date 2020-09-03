@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appdelivery-backend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: appdelivery-backend
+  template:
+    metadata:
+      labels:
+        app: appdelivery-backend
+    spec:
+      containers:
+      - image: gcr.io/fe-mtimmers/tbs-vmworld-backend:b2.20200902.183637
+        name: appdelivery-backend
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "qa"
