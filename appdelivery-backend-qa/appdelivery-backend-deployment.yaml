@@ -14,7 +14,7 @@ spec:
         app: appdelivery-backend
     spec:
       containers:
-      - image: gcr.io/fe-mtimmers/tbs-vmworld-backend:b2.20200902.183637
+      - image: gcr.io/fe-mtimmers/tbs-vmworld-backend:latest
         name: appdelivery-backend
         ports:
         - containerPort: 8080
